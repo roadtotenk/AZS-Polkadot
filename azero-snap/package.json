@@ -1,0 +1,16 @@
+{
+    "name": "azero-snap",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "yarn workspaces foreach -vitp run build",
+        "start": "yarn workspaces foreach -vitp run start",
+        "typecheck": "yarn workspaces foreach -vip run typecheck",
+        "lint": "yarn workspaces foreach -vip run lint",
+        "lint:errors": "yarn workspaces foreach -vip run lint -- --quiet",
+        "lint:fix": "yarn workspaces foreach -vip run lint:fix"
+    },
+    "packageManager": "yarn@3.2.1"
+}
