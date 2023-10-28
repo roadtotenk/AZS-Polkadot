@@ -10,7 +10,7 @@ Aleph Zero Snap simplifies the process of creating, managing, and transacting wi
 Our journey doesn’t end here. We are committed to enhancing the Aleph Zero Snap further by adding more quality-of-life functions. Additionally, we plan to integrate it even more closely with the Aleph Zero and Polkadot ecosystems, ensuring a holistic and seamless experience for users.
 
 # Demo Video
-https://youtu.be/vH2BclhJ7PY
+https://www.youtube.com/watch?v=pCZ2lURMU8s
 
 ## Technologies Used
 - Aleph Zero
