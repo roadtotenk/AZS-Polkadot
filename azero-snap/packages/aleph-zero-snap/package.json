@@ -1,0 +1,79 @@
+{
+  "name": "aleph-zero-snap",
+  "version": "0.3.0",
+  "description": "Aleph Zero Snap",
+  "author": "Piotr Roslaniec <p.roslaniec@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotr-roslaniec/ethwarsaw-2022"
+  },
+  "license": "GPL-3.0",
+  "main": "src/index.js",
+  "files": [
+    "dist/",
+    "images/",
+    "snap.manifest.json"
+  ],
+  "scripts": {
+    "dev": "nodemon --watch src/ --ext ts --ignore src/wasm.ts --exec 'yarn start'",
+    "serve": "mm-snap serve",
+    "start": "yarn build && yarn serve",
+    "build": "yarn clean && yarn build:fix-deps && yarn build:snap && yarn build:fix-bundle && cp snap.manifest.json dist/",
+    "build:tsc": "tsc",
+    "build:snap": "yarn build:tsc && mm-snap build --verboseErrors --eval=false",
+    "build:fix-bundle": "node scripts/fix-bundle.js && mm-snap manifest --fix && mm-snap eval --verboseErrors",
+    "build:clean": "rm -rf node_modules/wasm-bundler && yarn install --check-files && yarn clean && yarn build",
+    "clean": "rimraf dist build",
+    "lint": "yarn lint:eslint && yarn lint:misc --check",
+    "lint:eslint": "eslint . --cache --ext js,ts",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' --ignore-path .gitignore",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write",
+    "build:fix-deps": "node scripts/fix-smoldot.js"
+  },
+  "dependencies": {
+    "@metamask/browser-passworder": "^3.0.0",
+    "@metamask/key-tree": "^3.0.1",
+    "@polkadot/api": "^9.3.1",
+    "@polkadot/keyring": "^10.1.7",
+    "@polkadot/util": "^10.1.7",
+    "async-mutex": "^0.3.2",
+    "eth-rpc-errors": "^4.0.3",
+    "sha3": "^2.1.4",
+    "snap-adapter": "workspace:*"
+  },
+  "devDependencies": {
+    "@metamask/eslint-config": "^8.0.0",
+    "@metamask/eslint-config-jest": "^8.0.0",
+    "@metamask/eslint-config-nodejs": "^8.0.0",
+    "@metamask/snaps-cli": "^0.15.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "mkdirp": "^1.0.4",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.5.0",
+    "typescript": "^4.7.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "yarn manifest:fix"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=14.18.0"
+  }
+}

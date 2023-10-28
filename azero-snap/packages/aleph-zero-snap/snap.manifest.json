@@ -1,0 +1,26 @@
+{
+  "version": "0.3.0",
+  "proposedName": "Aleph Zero Snap",
+  "description": "Aleph Zero Snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roadtotenk/azs"
+  },
+  "source": {
+    "shasum": "QURdR8fRUvmT+t2g9mpEPl8bwS1VUzJ+72Kr05pshRw=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "aleph-zero-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_getBip44Entropy_434": {},
+    "snap_manageState": {},
+    "endowment:network-access": {}
+  },
+  "manifestVersion": "0.1"
+}
