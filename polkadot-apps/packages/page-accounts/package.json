@@ -1,0 +1,29 @@
+{
+  "bugs": "https://github.com/polkadot-js/apps/issues",
+  "homepage": "https://github.com/polkadot-js/apps/tree/master/packages/page-accounts#readme",
+  "license": "Apache-2.0",
+  "name": "@polkadot/app-accounts",
+  "private": true,
+  "repository": {
+    "directory": "packages/page-accounts",
+    "type": "git",
+    "url": "https://github.com/polkadot-js/apps.git"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "version": "0.120.2-15-x",
+  "dependencies": {
+    "@babel/runtime": "^7.18.9",
+    "@polkadot/hw-ledger": "^10.1.4",
+    "@polkadot/phishing": "^0.18.5",
+    "@polkadot/react-components": "^0.120.2-15-x",
+    "@polkadot/react-hooks": "^0.120.2-15-x",
+    "@polkadot/util": "^10.1.4",
+    "@polkadot/vanitygen": "^0.52.3",
+    "detect-browser": "^5.3.0",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "@polkadot/test-support": "0.120.2-15-x"
+  }
+}

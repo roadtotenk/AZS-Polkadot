@@ -1,0 +1,21 @@
+{
+  "bugs": "https://github.com/polkadot-js/apps/issues",
+  "homepage": "https://github.com/polkadot-js/apps/tree/master/packages/react-signer#readme",
+  "license": "Apache-2.0",
+  "name": "@polkadot/react-signer",
+  "private": true,
+  "repository": {
+    "directory": "packages/react-signer",
+    "type": "git",
+    "url": "https://github.com/polkadot-js/apps.git"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "version": "0.120.2-15-x",
+  "dependencies": {
+    "@babel/runtime": "^7.18.9",
+    "@polkadot/hw-ledger": "^10.1.4",
+    "@polkadot/react-components": "^0.120.2-15-x",
+    "snap-adapter": "workspace: *"
+  }
+}
