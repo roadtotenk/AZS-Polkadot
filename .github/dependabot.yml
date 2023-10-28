@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "snap"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "snap-adapter"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "snap-ui"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "wasm-bundler"
+    schedule:
+      interval: "daily"
